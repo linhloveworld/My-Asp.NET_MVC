@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "VuLinh_2051050001/1.0.0": {
+        "runtime": {
+          "VuLinh_2051050001.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "VuLinh_2051050001/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
