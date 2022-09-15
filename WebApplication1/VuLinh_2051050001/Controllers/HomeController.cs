@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AspNetCore;
+using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using VuLinh_2051050001.Models;
 
@@ -15,6 +16,7 @@ namespace VuLinh_2051050001.Controllers
 
         public IActionResult Index()
         {
+
             return View();
         }
 
@@ -28,5 +30,17 @@ namespace VuLinh_2051050001.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        public IActionResult GiaiPhuongTrinhBacMot()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult GiaiPhuongTrinhBacMot(String heSoA, String heSoB, String heSoC)
+        {
+            string ThongBaoBacMot = GiaiPhuongTrinh.GiaiPhuongTrinhBacMot(heSoA, heSoB);
+            ViewBag.Message = ThongBaoBacMot;
+            return View();   
+        }
+        
     }
 }
