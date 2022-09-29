@@ -3,14 +3,9 @@
     "",
     "\\WebApplication1",
     "\\WebApplication1\\VuLinh_2051050001",
-    "\\WebApplication1\\VuLinh_2051050001\\bin",
     "\\WebApplication1\\VuLinh_2051050001\\Controllers",
-    "\\WebApplication1\\VuLinh_2051050001\\obj",
-    "\\WebApplication1\\VuLinh_2051050001\\Properties",
-    "\\WebApplication1\\VuLinh_2051050001\\Views",
-    "\\WebApplication1\\VuLinh_2051050001\\Views\\Home",
-    "\\WebApplication1\\VuLinh_2051050001\\Views\\Shared"
+    "\\WebApplication1\\VuLinh_2051050001\\Models",
+    "\\WebApplication1\\VuLinh_2051050001\\obj"
   ],
-  "SelectedNode": "\\WebApplication1\\VuLinh_2051050001\\Views\\Shared\\_Layout.cshtml",
   "PreviewInSolutionExplorer": false
 }
