@@ -1,0 +1,22 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860;
+*@
+@{
+}
+@model IEnumerable<DemoMVC.Models.Person>
+<p>
+    <a class="btn btn-success" asp-action="Create">Create a new Person</a>
+</p>
+<table class="table table-all">
+    <tr>
+        <th>Person Id</th>
+        <th>Person Name</th>
+    </tr>
+@foreach (var item in Model)
+{
+    <tr>
+        <td>@Html.DisplayFor(m=>item.PersonID)</td>
+        <td>@Html.DisplayFor(m=>item.PersonName)</td>
+    </tr>
+}
+</table>
