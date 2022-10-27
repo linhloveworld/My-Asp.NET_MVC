@@ -1,5 +1,5 @@
-﻿using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 using VuLinh_BTH2_5_10.Models;
 
 namespace VuLinh_BTH2_5_10.Controllers;

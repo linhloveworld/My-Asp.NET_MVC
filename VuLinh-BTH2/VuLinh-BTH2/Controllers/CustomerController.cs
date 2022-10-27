@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using VuLinh_BTH2.Models;
-using VuLinh_BTH2.Data;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using VuLinh_BTH2.Data;
+using VuLinh_BTH2.Models;
 
 namespace VuLinh_BTH2.Controllers
 {

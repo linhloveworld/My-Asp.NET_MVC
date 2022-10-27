@@ -1,5 +1,5 @@
-﻿using VuLinh_BTH2.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using VuLinh_BTH2.Models;
 //using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace VuLinh_BTH2.Data

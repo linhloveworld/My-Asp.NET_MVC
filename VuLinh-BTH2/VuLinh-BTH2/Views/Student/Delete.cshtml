@@ -1,0 +1,24 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model VuLinh_BTH2.Models.Student
+@{
+    ViewData["Title"] = "Delete";
+}
+<h3>Ban co muon xoa thong tin Sinh vien khong?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model=>model.StudentName):
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayNameFor(model=>model.StudentName)
+        </dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="StudentID" />
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a class="btn btn-success" asp-action="Index">Danh sach Sinh vien</a>
+    </form>
+</div>
