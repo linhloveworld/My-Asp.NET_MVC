@@ -3,7 +3,7 @@
 *@
 @{
 }
-@model IEnumerable<DemoMVC.Models.Customer>
+@model IEnumerable<VuLinh_BTH2.Models.Customer>
 <p>
     <a class="btn btn-success" asp-action="Create">Create a new Customer</a>
 </p>
@@ -11,12 +11,17 @@
     <tr>
         <th>Customer Id</th>
         <th>Customer Name</th>
+        <th></th>
     </tr>
     @foreach (var item in Model)
     {
         <tr>
-            <td>@Html.DisplayFor(m=>item.CustomerID)</td>
+            <td>@Html.DisplayFor(m=>item.CustomerId)</td>
             <td>@Html.DisplayFor(m=>item.CustomerName)</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CustomerId">Sua</a>
+                <a asp-action="Delete" asp-route-id="@item.CustomerId">Xoa</a>
+            </td>
         </tr>
     }
 </table>

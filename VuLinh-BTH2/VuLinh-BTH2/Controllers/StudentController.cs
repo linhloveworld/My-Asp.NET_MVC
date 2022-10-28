@@ -70,7 +70,7 @@ namespace VuLinh_BTH2.Controllers
                 {
                     if (!StudentExists(std.StudentID))
                     {
-                        return NotFound();
+                        return View("NotFound");
                     }
                     else
                     {

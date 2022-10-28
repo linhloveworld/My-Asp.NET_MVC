@@ -3,7 +3,7 @@
 *@
 @{
 }
-@model IEnumerable<DemoMVC.Models.Person>
+@model IEnumerable<VuLinh_BTH2.Models.Person>
 <p>
     <a class="btn btn-success" asp-action="Create">Create a new Person</a>
 </p>
@@ -11,12 +11,17 @@
     <tr>
         <th>Person Id</th>
         <th>Person Name</th>
+        <th></th>
     </tr>
 @foreach (var item in Model)
 {
     <tr>
-        <td>@Html.DisplayFor(m=>item.PersonID)</td>
+        <td>@Html.DisplayFor(m=>item.PersonId)</td>
         <td>@Html.DisplayFor(m=>item.PersonName)</td>
+        <td>
+            <a asp-action="Edit" asp-route-id="@item.PersonId">Sửa</a>
+            <a asp-action="Delete" asp-route-id="@item.PersonId">Xóa</a>
+        </td>
     </tr>
 }
 </table>
