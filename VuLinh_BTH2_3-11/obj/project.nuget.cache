@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jbXWyWQfOXHvftL5hSjzXnQqlIfDAKK/gPLxmiCNlxmXM9DsMBUDVxVOWR+Hu7Tg9Z7x2IuHzoy8HtFI3c5iGg==",
+  "dgSpecHash": "jRY1409NaOh1jypS/vvxZ84sqMrhqOL7R3+uJlKUPjvVJaMfeWYuGdqWSK4SRnxHsy0xAl2F971clT+gwC3Hsg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\admin\\source\\repos\\VuLinh_BTH2_3-11\\VuLinh_BTH2_3-11.csproj",
+  "projectFilePath": "D:\\IT\\C# & ASP.NET\\repos\\My-Asp.NET_MVC\\VuLinh_BTH2_3-11\\VuLinh_BTH2_3-11.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\admin\\.nuget\\packages\\automapper\\4.2.1\\automapper.4.2.1.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\castle.core\\3.3.3\\castle.core.3.3.3.nupkg.sha512",

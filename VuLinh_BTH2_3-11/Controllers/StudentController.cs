@@ -1,27 +1,16 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Collections.Generic;
-using System.IO;
-using VuLinh_BTH2_3_11.Models.Process;
-using VuLinh_BTH2_3_11.Models;
-using Microsoft.EntityFrameworkCore;
-
-namespace VuLinh_BTH2_3_11.Controllers
+﻿namespace VuLinh_BTH2_3_11.Controllers
 {
-    public class EmployeeController : Controller
+    public class StudentController : Controller
     {
         private readonly ApplicationDbContext _context;
         private ExcelProcess _excelProcess = new ExcelProcess();
-        public EmployeeController(ApplicationDbContext context)
+        public StudentController(ApplicationDbContext context)
         {
             _context = context;
         }
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Employee.ToListAsync());
+            return View(await _context.Students.ToListAsync());
         }
         //27-10
         public IActionResult Create()
@@ -29,7 +18,7 @@ namespace VuLinh_BTH2_3_11.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Create(Employees std)
+        public async Task<IActionResult> Create(Student std)
         {
             if (ModelState.IsValid)
             {
@@ -39,30 +28,30 @@ namespace VuLinh_BTH2_3_11.Controllers
             }
             return View(std);
         }
-        private bool EmployeeExists(string id)
+        private bool StudentExists(string id)
         {
-            return _context.Employees.Any(e => e.EmployeeID == id);
+            return _context.Students.Any(e => e.StudentID == id);
         }
-        //Get: Customer/Edit/5
+        //Get: Student/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
             if (id == null)
             {
                 return View("NotFound");
             }
-            var employee = await _context.Employees.FindAsync(id);
-            if (employee == null)
+            var student = await _context.Students.FindAsync(id);
+            if (student == null)
             {
                 return View("NotFound");
             }
-            return View(employee);
+            return View(student);
         }
-        //Post:Employee/Edit/5
+        //Post:Student/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("EmployeeID,EmployeeName")] Employees std)
+        public async Task<IActionResult> Edit(string id, [Bind("StudentID,StudentName")] Student std)
         {
-            if (id != std.EmployeeID)
+            if (id != std.StudentID)
             {
                 return View("NotFound");
             }
@@ -75,7 +64,7 @@ namespace VuLinh_BTH2_3_11.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!EmployeeExists(std.EmployeeID))
+                    if (!StudentExists(std.StudentID))
                     {
                         return View("NotFound");
                     }
@@ -88,36 +77,36 @@ namespace VuLinh_BTH2_3_11.Controllers
             }
             return View(std);
         }
-        //GET:Employee/Delete/5
+        //GET:Product/Delete/5
         public async Task<IActionResult> Delete(string id)
         {
             if (id == null)
             {
                 return View("NotFound");
             }
-            var std = await _context.Employees.FirstOrDefaultAsync(m => m.EmployeeID == id);
+            var std = await _context.Students.FirstOrDefaultAsync(m => m.StudentID == id);
             if (std == null)
             {
                 return View("NotFound");
             }
             return View(std);
         }
-        //POST: Employee/Delete/5
+        //POST: Product/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            var std = await _context.Employees.FindAsync(id);
-            _context.Employees.Remove(std);
+            var std = await _context.Students.FindAsync(id);
+            _context.Students.Remove(std);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
         //3-11
-        public bool EmployeeExists(string id)
+        public bool StudentsExists(string id)
         {
-            return _context.Employee.Any(e => e.EmpID == id);
+            return _context.Students.Any(e => e.StudentID == id);
         }
-        public DbSet<VuLinh_BTH2_3_11.Models.Employee> Employee { get; set; }
+        public DbSet<VuLinh_BTH2_3_11.Models.Students> Students { get; set; }
         /*public IActionResult Index()
         {
             return View();
@@ -133,7 +122,7 @@ namespace VuLinh_BTH2_3_11.Controllers
             if (file != null)
             {
                 string fileExtension = Path.GetExtension(file.FileName);
-                if(fileExtension != ".xls" && fileExtension != ".xlsx")
+                if (fileExtension != ".xls" && fileExtension != ".xlsx")
                 {
                     ModelState.AddModelError("", "Please choose excel file to upload!");
                 }
@@ -150,16 +139,16 @@ namespace VuLinh_BTH2_3_11.Controllers
                         //read data from file and write to database
                         var dt = _excelProcess.ExcelToDataTable(fileLocation);
                         //using for loop to read data from dt
-                        for(int i=0; i < dt.Rows.Count; i++)
+                        for (int i = 0; i < dt.Rows.Count; i++)
                         {
                             //create a new Employee object;
-                            var emp = new Employee();
+                            var std = new Students();
                             //set values for attributes
-                            emp.EmpID = dt.Rows[i][0].ToString();
-                            emp.EmpName = dt.Rows[i][0].ToString();
-                            emp.Address = dt.Rows[i][0].ToString();
+                            std.StudentID = dt.Rows[i][0].ToString();
+                            std.StudentName = dt.Rows[i][0].ToString();
+
                             //add object to Context
-                            _context.Employee.Add(emp);
+                            _context.Students.Add(std);
                         }
                         //save to database
                         await _context.SaveChangeAsync();

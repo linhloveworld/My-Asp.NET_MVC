@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\admin\\source\\repos\\VuLinh_BTH2_3-11\\VuLinh_BTH2_3-11.csproj": {}
+    "D:\\IT\\C# & ASP.NET\\repos\\My-Asp.NET_MVC\\VuLinh_BTH2_3-11\\VuLinh_BTH2_3-11.csproj": {}
   },
   "projects": {
-    "C:\\Users\\admin\\source\\repos\\VuLinh_BTH2_3-11\\VuLinh_BTH2_3-11.csproj": {
+    "D:\\IT\\C# & ASP.NET\\repos\\My-Asp.NET_MVC\\VuLinh_BTH2_3-11\\VuLinh_BTH2_3-11.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\admin\\source\\repos\\VuLinh_BTH2_3-11\\VuLinh_BTH2_3-11.csproj",
+        "projectUniqueName": "D:\\IT\\C# & ASP.NET\\repos\\My-Asp.NET_MVC\\VuLinh_BTH2_3-11\\VuLinh_BTH2_3-11.csproj",
         "projectName": "VuLinh_BTH2_3-11",
-        "projectPath": "C:\\Users\\admin\\source\\repos\\VuLinh_BTH2_3-11\\VuLinh_BTH2_3-11.csproj",
+        "projectPath": "D:\\IT\\C# & ASP.NET\\repos\\My-Asp.NET_MVC\\VuLinh_BTH2_3-11\\VuLinh_BTH2_3-11.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\admin\\source\\repos\\VuLinh_BTH2_3-11\\obj\\",
+        "outputPath": "D:\\IT\\C# & ASP.NET\\repos\\My-Asp.NET_MVC\\VuLinh_BTH2_3-11\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

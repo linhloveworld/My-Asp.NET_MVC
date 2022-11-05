@@ -1,27 +1,22 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Collections.Generic;
-using System.IO;
-using VuLinh_BTH2_3_11.Models.Process;
-using VuLinh_BTH2_3_11.Models;
-using Microsoft.EntityFrameworkCore;
 
 namespace VuLinh_BTH2_3_11.Controllers
 {
-    public class EmployeeController : Controller
+    public class CustomerController : Controller
     {
         private readonly ApplicationDbContext _context;
         private ExcelProcess _excelProcess = new ExcelProcess();
-        public EmployeeController(ApplicationDbContext context)
+        public CustomerController(ApplicationDbContext context)
         {
             _context = context;
         }
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Employee.ToListAsync());
+            return View(await _context.Customer.ToListAsync());
         }
         //27-10
         public IActionResult Create()
@@ -29,7 +24,7 @@ namespace VuLinh_BTH2_3_11.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Create(Employees std)
+        public async Task<IActionResult> Create(Customer std)
         {
             if (ModelState.IsValid)
             {
@@ -39,32 +34,32 @@ namespace VuLinh_BTH2_3_11.Controllers
             }
             return View(std);
         }
-        private bool EmployeeExists(string id)
+        private bool CustomersExists(string id)
         {
-            return _context.Employees.Any(e => e.EmployeeID == id);
+            return _context.Customers.Any(e => e.CustomerId == id);
         }
-        //Get: Customer/Edit/5
+        //Get: Student/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
             if (id == null)
             {
-                return View("NotFound");
+                return NotFound();
             }
-            var employee = await _context.Employees.FindAsync(id);
-            if (employee == null)
+            var customer = await _context.Customers.FindAsync(id);
+            if (customer == null)
             {
-                return View("NotFound");
+                return NotFound();
             }
-            return View(employee);
+            return View(customer);
         }
-        //Post:Employee/Edit/5
+        //Post:Customers/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("EmployeeID,EmployeeName")] Employees std)
+        public async Task<IActionResult> Edit(string id, [Bind("CustomerId,CustomerName")] Customer std)
         {
-            if (id != std.EmployeeID)
+            if (id != std.CustomerId)
             {
-                return View("NotFound");
+                return NotFound();
             }
             if (ModelState.IsValid)
             {
@@ -75,9 +70,9 @@ namespace VuLinh_BTH2_3_11.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!EmployeeExists(std.EmployeeID))
+                    if (!CustomersExists(std.CustomerId))
                     {
-                        return View("NotFound");
+                        return NotFound();
                     }
                     else
                     {
@@ -88,40 +83,36 @@ namespace VuLinh_BTH2_3_11.Controllers
             }
             return View(std);
         }
-        //GET:Employee/Delete/5
+        //GET:Customers/Delete/5
         public async Task<IActionResult> Delete(string id)
         {
             if (id == null)
             {
-                return View("NotFound");
+                return NotFound();
             }
-            var std = await _context.Employees.FirstOrDefaultAsync(m => m.EmployeeID == id);
+            var std = await _context.Customers.FirstOrDefaultAsync(m => m.CustomerId == id);
             if (std == null)
             {
-                return View("NotFound");
+                return NotFound();
             }
             return View(std);
         }
-        //POST: Employee/Delete/5
+        //POST: Product/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            var std = await _context.Employees.FindAsync(id);
-            _context.Employees.Remove(std);
+            var std = await _context.Customers.FindAsync(id);
+            _ = _context.Customers.Remove(std);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
         //3-11
-        public bool EmployeeExists(string id)
+        public bool CustomerExists(string id)
         {
-            return _context.Employee.Any(e => e.EmpID == id);
+            return _context.Customer.Any(e => e.CustomerID == id);
         }
-        public DbSet<VuLinh_BTH2_3_11.Models.Employee> Employee { get; set; }
-        /*public IActionResult Index()
-        {
-            return View();
-        }*/
+        public DbSet<VuLinh_BTH2_3_11.Models.Customer> Customer { get; set; }
         public async Task<IActionResult> Upload()
         {
             return View();
@@ -133,7 +124,7 @@ namespace VuLinh_BTH2_3_11.Controllers
             if (file != null)
             {
                 string fileExtension = Path.GetExtension(file.FileName);
-                if(fileExtension != ".xls" && fileExtension != ".xlsx")
+                if (fileExtension != ".xls" && fileExtension != ".xlsx")
                 {
                     ModelState.AddModelError("", "Please choose excel file to upload!");
                 }
@@ -150,16 +141,16 @@ namespace VuLinh_BTH2_3_11.Controllers
                         //read data from file and write to database
                         var dt = _excelProcess.ExcelToDataTable(fileLocation);
                         //using for loop to read data from dt
-                        for(int i=0; i < dt.Rows.Count; i++)
+                        for (int i = 0; i < dt.Rows.Count; i++)
                         {
                             //create a new Employee object;
-                            var emp = new Employee();
+                            var cus = new Customer();
                             //set values for attributes
-                            emp.EmpID = dt.Rows[i][0].ToString();
-                            emp.EmpName = dt.Rows[i][0].ToString();
-                            emp.Address = dt.Rows[i][0].ToString();
+                            cus.CustomerID = dt.Rows[i][0].ToString();
+                            cus.CustomerName = dt.Rows[i][0].ToString();
+                            //emp.Address = dt.Rows[i][0].ToString();
                             //add object to Context
-                            _context.Employee.Add(emp);
+                            _context.Customer.Add(emp);
                         }
                         //save to database
                         await _context.SaveChangeAsync();

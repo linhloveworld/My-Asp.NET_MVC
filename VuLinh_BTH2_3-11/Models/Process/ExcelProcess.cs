@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Data;
-using OfficeOpenXml;
-using System.IO;
-
-namespace VuLinh_BTH2_3_11.Models.Process
+﻿namespace VuLinh_BTH2_3_11.Models.Process
 {
     public class ExcelProcess
     {
