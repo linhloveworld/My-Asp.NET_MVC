@@ -1,0 +1,14 @@
+D:\IT\C# & ASP.NET + SQL Server\repos\My-Asp.NET_MVC\VuLinh_BTH2_3-11\obj\Debug\netcoreapp3.1\VuLinh_BTH2_3-11.csproj.AssemblyReference.cache
+D:\IT\C# & ASP.NET + SQL Server\repos\My-Asp.NET_MVC\VuLinh_BTH2_3-11\obj\Debug\netcoreapp3.1\VuLinh_BTH2_3-11.AssemblyInfoInputs.cache
+D:\IT\C# & ASP.NET + SQL Server\repos\My-Asp.NET_MVC\VuLinh_BTH2_3-11\obj\Debug\netcoreapp3.1\VuLinh_BTH2_3-11.AssemblyInfo.cs
+D:\IT\C# & ASP.NET + SQL Server\repos\My-Asp.NET_MVC\VuLinh_BTH2_3-11\obj\Debug\netcoreapp3.1\VuLinh_BTH2_3-11.csproj.CoreCompileInputs.cache
+D:\IT\C# & ASP.NET + SQL Server\repos\My-Asp.NET_MVC\VuLinh_BTH2_3-11\obj\Debug\netcoreapp3.1\VuLinh_BTH2_3-11.MvcApplicationPartsAssemblyInfo.cache
+D:\IT\C# & ASP.NET + SQL Server\repos\My-Asp.NET_MVC\VuLinh_BTH2_3-11\obj\Debug\netcoreapp3.1\VuLinh_BTH2_3-11.RazorAssemblyInfo.cache
+D:\IT\C# & ASP.NET + SQL Server\repos\My-Asp.NET_MVC\VuLinh_BTH2_3-11\obj\Debug\netcoreapp3.1\VuLinh_BTH2_3-11.RazorAssemblyInfo.cs
+D:\IT\C# & ASP.NET + SQL Server\repos\My-Asp.NET_MVC\VuLinh_BTH2_17-11\obj\Debug\netcoreapp3.1\VuLinh_BTH2_3-11.csproj.AssemblyReference.cache
+D:\IT\C# & ASP.NET + SQL Server\repos\My-Asp.NET_MVC\VuLinh_BTH2_17-11\obj\Debug\netcoreapp3.1\VuLinh_BTH2_3-11.AssemblyInfoInputs.cache
+D:\IT\C# & ASP.NET + SQL Server\repos\My-Asp.NET_MVC\VuLinh_BTH2_17-11\obj\Debug\netcoreapp3.1\VuLinh_BTH2_3-11.AssemblyInfo.cs
+D:\IT\C# & ASP.NET + SQL Server\repos\My-Asp.NET_MVC\VuLinh_BTH2_17-11\obj\Debug\netcoreapp3.1\VuLinh_BTH2_3-11.csproj.CoreCompileInputs.cache
+D:\IT\C# & ASP.NET + SQL Server\repos\My-Asp.NET_MVC\VuLinh_BTH2_17-11\obj\Debug\netcoreapp3.1\VuLinh_BTH2_3-11.MvcApplicationPartsAssemblyInfo.cache
+D:\IT\C# & ASP.NET + SQL Server\repos\My-Asp.NET_MVC\VuLinh_BTH2_17-11\obj\Debug\netcoreapp3.1\VuLinh_BTH2_3-11.RazorAssemblyInfo.cache
+D:\IT\C# & ASP.NET + SQL Server\repos\My-Asp.NET_MVC\VuLinh_BTH2_17-11\obj\Debug\netcoreapp3.1\VuLinh_BTH2_3-11.RazorAssemblyInfo.cs
